@@ -337,7 +337,8 @@
         <h2 class="display">Établissons la connexion</h2>
       </div>
       <div class="contact-grid">
-        <form id="contact-form" novalidate>
+        form id="contact-form" action="https://formspree.io/f/mzdneaba" method="POST" novalidate>
+  <input type="hidden" name="_subject" value="Nouveau message G8WAY">
           <div class="row">
             <div>
               <label for="nom">Nom</label>
@@ -389,20 +390,38 @@
 </footer>
 
 <script>
-  // Formulaire de démonstration (aucun envoi réel)
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var nom = document.getElementById('nom');
-    var email = document.getElementById('email');
-    if(!nom.value.trim() || !email.value.trim() || !email.checkValidity()){
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    const nom = document.getElementById('nom');
+    const email = document.getElementById('email');
+
+    // Validation simple
+    if (!nom.value.trim() || !email.value.trim() || !email.checkValidity()) {
       alert('Merci de renseigner un nom et un e-mail valides.');
       return;
     }
-    document.getElementById('form-msg').style.display = 'block';
-    this.reset();
-  });
-  document.querySelectorAll('#menu a').forEach(function(a){
-    a.addEventListener('click', function(){ document.getElementById('menu').classList.remove('open'); });
+
+    const form = this;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('form-msg').style.display = 'block';
+        form.reset(); // Vide le formulaire
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Remonte en haut
+      } else {
+        alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+      }
+    })
+    .catch(() => {
+      alert('Erreur réseau. Vérifiez votre connexion.');
+    });
   });
 </script>
 </body>
