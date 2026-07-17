@@ -391,15 +391,20 @@
 
 <script>
   (function() {
-    // Initialiser EmailJS avec ta clé publique (User ID)
+    // Initialisation avec ta clé publique
     emailjs.init("QJ2tG3z4SLs_SC4O7");
+    console.log("EmailJS initialisé !");
   })();
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Empêche le rechargement de la page
+    e.preventDefault();
 
+    // Récupération des champs
     const nom = document.getElementById('nom');
     const email = document.getElementById('email');
+    const societe = document.getElementById('societe');
+    const besoin = document.getElementById('besoin');
+    const message = document.getElementById('message');
 
     // Validation simple
     if (!nom.value.trim() || !email.value.trim() || !email.checkValidity()) {
@@ -407,23 +412,33 @@
       return;
     }
 
-    const form = this;
+    // Construction des paramètres pour EmailJS
+    const templateParams = {
+      nom: nom.value,
+      email: email.value,
+      societe: societe.value,
+      besoin: besoin.value,
+      message: message.value,
+      // 👇 Optionnel : si ton template utilise {{to_email}}, décommente la ligne ci-dessous
+      // to_email: 'ton.email@gmail.com' 
+    };
 
-    // Envoyer via EmailJS
-    emailjs.sendForm(
-      'service_th503f7',      // ← Ton Service ID
-      'template_ezk62ss',     // ← Ton Template ID
-      form
+    // Envoi vers EmailJS avec la méthode .send() (plus fiable)
+    emailjs.send(
+      'service_th503f7',     // Ton Service ID
+      'template_ezk62ss',    // Ton Template ID
+      templateParams
     )
     .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
+      console.log('SUCCESS !', response.status, response.text);
       document.getElementById('form-msg').style.display = 'block';
-      form.reset(); // Vide le formulaire
+      document.getElementById('contact-form').reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, function(error) {
       console.log('FAILED...', error);
       alert('Erreur lors de l\'envoi. Veuillez réessayer.');
     });
   });
-</script></body>
+</script>
+</body>
 </html>
