@@ -1,183 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G8WAY — L'accès direct à l'infrastructure de demain</title>
-<meta name="description" content="G8WAY : connectivité, hébergement et infogérance réseau pour les entreprises. The straight path to next-gen infrastructure.">
-<link rel="icon" href="logo_G8way.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#081127;          /* bleu nuit profond du logo */
-    --bg-soft:#0B1733;
-    --card:#0E1D3E;
-    --line:#1D2F57;
-    --text:#E9EFFA;
-    --muted:#93A3C4;
-    --blue:#4D8DF7;        /* bleu électrique du logo */
-    --blue-soft:#7FB2FF;
-    --glow:rgba(77,141,247,.45);
-    --ok:#3DDC97;          /* LED "link up" */
-    --radius:10px;
-    --maxw:1120px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'IBM Plex Sans',system-ui,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    font-size:16px;
-  }
-  ::selection{background:var(--blue);color:#fff}
-  a{color:inherit}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .mono{font-family:'IBM Plex Mono',monospace}
-  .display{font-family:'Chakra Petch',sans-serif}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G8WAY — L'accès direct à l'infrastructure de demain</title>
+  <meta name="description" content="G8WAY : connectivité, hébergement et infogérance réseau pour les entreprises. The straight path to next-gen infrastructure.">
+  <link rel="icon" href="logo_G8way.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#081127;
+      --bg-soft:#0B1733;
+      --card:#0E1D3E;
+      --line:#1D2F57;
+      --text:#E9EFFA;
+      --muted:#93A3C4;
+      --blue:#4D8DF7;
+      --blue-soft:#7FB2FF;
+      --glow:rgba(77,141,247,.45);
+      --ok:#3DDC97;
+      --radius:10px;
+      --maxw:1120px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'IBM Plex Sans',system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      font-size:16px;
+    }
+    ::selection{background:var(--blue);color:#fff}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .mono{font-family:'IBM Plex Mono',monospace}
+    .display{font-family:'Chakra Petch',sans-serif}
 
-  /* ---------- Header ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(8,17,39,.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .logo{font-family:'Chakra Petch';font-weight:700;font-size:21px;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:12px;color:var(--text)}
-  .logo img{width:40px;height:40px;border-radius:9px;object-fit:cover;border:1px solid var(--line)}
-  .logo .led{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok);animation:blink 2.4s infinite}
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-  .nav ul{display:flex;gap:28px;list-style:none}
-  .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
-  .nav ul a:hover,.nav ul a:focus-visible{color:var(--text)}
-  .btn{
-    display:inline-block;background:var(--blue);color:#fff;text-decoration:none;
-    font-weight:600;font-size:14px;padding:10px 20px;border-radius:var(--radius);
-    border:none;cursor:pointer;transition:background .15s, box-shadow .15s;
-  }
-  .btn:hover,.btn:focus-visible{background:var(--blue-soft);box-shadow:0 0 18px var(--glow)}
-  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-  .btn.ghost:hover{border-color:var(--blue);box-shadow:none;background:transparent}
-  .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer;font-size:16px;color:var(--text)}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(8,17,39,.82);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{font-family:'Chakra Petch';font-weight:700;font-size:21px;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:12px;color:var(--text)}
+    .logo img{width:40px;height:40px;border-radius:9px;object-fit:cover;border:1px solid var(--line)}
+    .logo .led{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok);animation:blink 2.4s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+    .nav ul{display:flex;gap:28px;list-style:none}
+    .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
+    .nav ul a:hover,.nav ul a:focus-visible{color:var(--text)}
+    .btn{
+      display:inline-block;background:var(--blue);color:#fff;text-decoration:none;
+      font-weight:600;font-size:14px;padding:10px 20px;border-radius:var(--radius);
+      border:none;cursor:pointer;transition:background .15s, box-shadow .15s;
+    }
+    .btn:hover,.btn:focus-visible{background:var(--blue-soft);box-shadow:0 0 18px var(--glow)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+    .btn.ghost:hover{border-color:var(--blue);box-shadow:none;background:transparent}
+    .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer;font-size:16px;color:var(--text)}
 
-  /* ---------- Hero ---------- */
-  .hero{
-    padding:80px 0 64px;text-align:center;position:relative;overflow:hidden;
-  }
-  .hero::before{ /* halo bleu type circuit du logo */
-    content:"";position:absolute;inset:auto -20% -60% -20%;height:70%;
-    background:radial-gradient(ellipse at center, rgba(77,141,247,.16), transparent 65%);
-    pointer-events:none;
-  }
-  .hero .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  .hero-logo{
-    width:min(340px,70vw);border-radius:18px;margin:26px auto 6px;display:block;
-    border:1px solid var(--line);
-    box-shadow:0 0 60px rgba(77,141,247,.25), 0 18px 50px rgba(0,0,0,.5);
-  }
-  .wordmark{
-    font-family:'Chakra Petch';font-weight:700;
-    font-size:clamp(44px,9vw,96px);
-    letter-spacing:.02em;line-height:1;
-    display:flex;align-items:center;justify-content:center;gap:.02em;
-    margin:22px 0 6px;
-  }
-  .wordmark svg{height:.82em;width:auto;display:block}
-  .loop-path{fill:none;stroke:var(--blue-soft);stroke-width:14;stroke-linecap:round}
-  .packet{fill:#fff;filter:drop-shadow(0 0 6px var(--blue-soft))}
-  .hero h1{font-size:clamp(19px,3vw,28px);font-weight:600;margin-top:10px}
-  .hero .en{color:var(--muted);font-style:italic;margin-top:6px;font-size:15px}
-  .hero .actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+    .hero{
+      padding:80px 0 64px;text-align:center;position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:auto -20% -60% -20%;height:70%;
+      background:radial-gradient(ellipse at center, rgba(77,141,247,.16), transparent 65%);
+      pointer-events:none;
+    }
+    .hero .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    .hero-logo{
+      width:min(340px,70vw);border-radius:18px;margin:26px auto 6px;display:block;
+      border:1px solid var(--line);
+      box-shadow:0 0 60px rgba(77,141,247,.25), 0 18px 50px rgba(0,0,0,.5);
+    }
+    .wordmark{
+      font-family:'Chakra Petch';font-weight:700;
+      font-size:clamp(44px,9vw,96px);
+      letter-spacing:.02em;line-height:1;
+      display:flex;align-items:center;justify-content:center;gap:.02em;
+      margin:22px 0 6px;
+    }
+    .wordmark svg{height:.82em;width:auto;display:block}
+    .loop-path{fill:none;stroke:var(--blue-soft);stroke-width:14;stroke-linecap:round}
+    .packet{fill:#fff;filter:drop-shadow(0 0 6px var(--blue-soft))}
+    .hero h1{font-size:clamp(19px,3vw,28px);font-weight:600;margin-top:10px}
+    .hero .en{color:var(--muted);font-style:italic;margin-top:6px;font-size:15px}
+    .hero .actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
-  /* ---------- Status strip ---------- */
-  .status{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
-  .status .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-  .stat{padding:22px 16px;text-align:center;border-left:1px solid var(--line)}
-  .stat:first-child{border-left:none}
-  .stat .val{font-family:'IBM Plex Mono';font-size:22px;font-weight:500}
-  .stat .val .ok{color:var(--ok)}
-  .stat .lbl{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+    .status{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+    .status .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:22px 16px;text-align:center;border-left:1px solid var(--line)}
+    .stat:first-child{border-left:none}
+    .stat .val{font-family:'IBM Plex Mono';font-size:22px;font-weight:500}
+    .stat .val .ok{color:var(--ok)}
+    .stat .lbl{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
 
-  /* ---------- Sections ---------- */
-  section{padding:80px 0}
-  .sec-head{max-width:640px;margin-bottom:44px}
-  .sec-head .tag{font-family:'IBM Plex Mono';font-size:13px;color:var(--blue-soft)}
-  .sec-head h2{font-family:'Chakra Petch';font-size:clamp(26px,4vw,38px);font-weight:600;margin-top:6px}
-  .sec-head p{color:var(--muted);margin-top:10px}
+    section{padding:80px 0}
+    .sec-head{max-width:640px;margin-bottom:44px}
+    .sec-head .tag{font-family:'IBM Plex Mono';font-size:13px;color:var(--blue-soft)}
+    .sec-head h2{font-family:'Chakra Petch';font-size:clamp(26px,4vw,38px);font-weight:600;margin-top:6px}
+    .sec-head p{color:var(--muted);margin-top:10px}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:26px;transition:border-color .15s, transform .15s, box-shadow .15s;
-  }
-  .card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
-  .card .ico{font-family:'IBM Plex Mono';font-size:13px;color:var(--blue-soft);display:block;margin-bottom:14px}
-  .card h3{font-family:'Chakra Petch';font-size:18px;font-weight:600;margin-bottom:8px}
-  .card p{font-size:14.5px;color:var(--muted)}
-  .card ul{margin-top:12px;list-style:none}
-  .card li{font-size:13.5px;color:var(--muted);padding:4px 0 4px 18px;position:relative}
-  .card li::before{content:"→";position:absolute;left:0;color:var(--blue)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:26px;transition:border-color .15s, transform .15s, box-shadow .15s;
+    }
+    .card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
+    .card .ico{font-family:'IBM Plex Mono';font-size:13px;color:var(--blue-soft);display:block;margin-bottom:14px}
+    .card h3{font-family:'Chakra Petch';font-size:18px;font-weight:600;margin-bottom:8px}
+    .card p{font-size:14.5px;color:var(--muted)}
+    .card ul{margin-top:12px;list-style:none}
+    .card li{font-size:13.5px;color:var(--muted);padding:4px 0 4px 18px;position:relative}
+    .card li::before{content:"→";position:absolute;left:0;color:var(--blue)}
 
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .step .n{font-family:'IBM Plex Mono';font-size:13px;color:var(--muted)}
-  .step h3{font-family:'Chakra Petch';font-size:17px;margin:8px 0 6px}
-  .step p{font-size:14px;color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+    .step .n{font-family:'IBM Plex Mono';font-size:13px;color:var(--muted)}
+    .step h3{font-family:'Chakra Petch';font-size:17px;margin:8px 0 6px}
+    .step p{font-size:14px;color:var(--muted)}
 
-  /* À propos : carte claire inversée pour contraster */
-  .about{background:linear-gradient(160deg,#10224a,#0B1733);border:1px solid var(--line);border-radius:16px}
-  .about .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;padding:56px 48px;align-items:center}
-  .about h2{font-family:'Chakra Petch';font-size:clamp(24px,3.5vw,34px)}
-  .about p{color:var(--muted);margin-top:14px;font-size:15.5px}
-  .about .term{
-    background:#060D1F;border:1px solid var(--line);border-radius:10px;
-    font-family:'IBM Plex Mono';font-size:13px;padding:20px;color:var(--blue-soft);
-    line-height:1.9;overflow-x:auto;
-  }
-  .about .term .p{color:#5B84B1}
-  .about .term .ok{color:var(--ok)}
+    .about{background:linear-gradient(160deg,#10224a,#0B1733);border:1px solid var(--line);border-radius:16px}
+    .about .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;padding:56px 48px;align-items:center}
+    .about h2{font-family:'Chakra Petch';font-size:clamp(24px,3.5vw,34px)}
+    .about p{color:var(--muted);margin-top:14px;font-size:15.5px}
+    .about .term{
+      background:#060D1F;border:1px solid var(--line);border-radius:10px;
+      font-family:'IBM Plex Mono';font-size:13px;padding:20px;color:var(--blue-soft);
+      line-height:1.9;overflow-x:auto;
+    }
+    .about .term .p{color:#5B84B1}
+    .about .term .ok{color:var(--ok)}
 
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
-  input,textarea,select{
-    width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;
-    font:inherit;font-size:14.5px;background:var(--bg-soft);color:var(--text);
-  }
-  input::placeholder,textarea::placeholder{color:#5C6C90}
-  input:focus,textarea:focus,select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
-  .contact-info p{color:var(--muted);font-size:15px;margin-bottom:18px}
-  .contact-info .line{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px}
-  .contact-info .line .k{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--blue-soft);min-width:90px;padding-top:2px}
-  #form-msg{margin-top:14px;font-size:14px;color:var(--ok);font-weight:600;display:none}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+    input,textarea,select{
+      width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;
+      font:inherit;font-size:14.5px;background:var(--bg-soft);color:var(--text);
+    }
+    input::placeholder,textarea::placeholder{color:#5C6C90}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+    .contact-info p{color:var(--muted);font-size:15px;margin-bottom:18px}
+    .contact-info .line{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px}
+    .contact-info .line .k{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--blue-soft);min-width:90px;padding-top:2px}
+    #form-msg{margin-top:14px;font-size:14px;color:var(--ok);font-weight:600;display:none}
 
-  footer{border-top:1px solid var(--line);padding:36px 0;font-size:13.5px;color:var(--muted)}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
-  footer nav{display:flex;gap:20px}
-  footer a{text-decoration:none}
-  footer a:hover{color:var(--text)}
+    footer{border-top:1px solid var(--line);padding:36px 0;font-size:13.5px;color:var(--muted)}
+    footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+    footer nav{display:flex;gap:20px}
+    footer a{text-decoration:none}
+    footer a:hover{color:var(--text)}
 
-  @media (max-width:840px){
-    .nav ul{display:none}
-    .nav ul.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:20px 24px;gap:16px}
-    .burger{display:block}
-    .status .wrap{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(3){border-left:none}
-    .stat{border-top:1px solid var(--line)}
-    .stat:nth-child(-n+2){border-top:none}
-    .about .inner{grid-template-columns:1fr;padding:36px 24px}
-    .contact-grid{grid-template-columns:1fr}
-    form .row{grid-template-columns:1fr}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    html{scroll-behavior:auto}
-  }
-</style>
+    @media (max-width:840px){
+      .nav ul{display:none}
+      .nav ul.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:20px 24px;gap:16px}
+      .burger{display:block}
+      .status .wrap{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(3){border-left:none}
+      .stat{border-top:1px solid var(--line)}
+      .stat:nth-child(-n+2){border-top:none}
+      .about .inner{grid-template-columns:1fr;padding:36px 24px}
+      .contact-grid{grid-template-columns:1fr}
+      form .row{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important}
+      html{scroll-behavior:auto}
+    }
+  </style>
 </head>
 <body>
 
@@ -201,8 +195,6 @@
 </header>
 
 <main id="top">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow mono">// connectivité · hébergement · infogérance</p>
@@ -227,7 +219,6 @@
     </div>
   </section>
 
-  <!-- STATUS STRIP -->
   <div class="status" aria-label="Indicateurs clés">
     <div class="wrap">
       <div class="stat"><div class="val"><span class="ok">99,99 %</span></div><div class="lbl">Disponibilité</div></div>
@@ -237,7 +228,6 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="sec-head">
@@ -290,7 +280,6 @@
     </div>
   </section>
 
-  <!-- APPROCHE -->
   <section id="approche" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
@@ -307,7 +296,6 @@
     </div>
   </section>
 
-  <!-- À PROPOS -->
   <section id="apropos" style="padding-top:0">
     <div class="wrap">
       <div class="about">
@@ -329,7 +317,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
@@ -337,7 +324,7 @@
         <h2 class="display">Établissons la connexion</h2>
       </div>
       <div class="contact-grid">
-        <!-- Formulaire EmailJS pur (pas d'action, pas de method) -->
+        <!-- Formulaire EmailJS sans action/method -->
         <form id="contact-form" novalidate>
           <div class="row">
             <div>
@@ -390,12 +377,13 @@
   </div>
 </footer>
 
-<!-- Chargement de la bibliothèque EmailJS -->
+<!-- Chargement EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<!-- Ton script personnalisé -->
+<!-- Script principal avec le log de vérification -->
 <script>
-  // Initialisation avec ta clé publique
+  console.log("✅ Le script est bien exécuté !");   // <-- VERIFICATION
+
   (function() {
     emailjs.init("QJ2tG3z4SLs_SC4O7");
     console.log("EmailJS initialisé !");
@@ -421,13 +409,13 @@
       societe: societe.value,
       besoin: besoin.value,
       message: message.value
-      // Si ton template EmailJS attend un champ {{to_email}}, décommente la ligne :
+      // Si ton template utilise {{to_email}}, décommente :
       // to_email: 'ton.email@gmail.com'
     };
 
     emailjs.send(
-      'service_th503f7',     // Ton Service ID
-      'template_ezk62ss',    // Ton Template ID
+      'service_th503f7',
+      'template_ezk62ss',
       templateParams
     )
     .then(function(response) {
@@ -441,5 +429,6 @@
     });
   });
 </script>
+
 </body>
 </html>
