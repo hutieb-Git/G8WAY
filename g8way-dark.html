@@ -337,8 +337,8 @@
         <h2 class="display">Établissons la connexion</h2>
       </div>
       <div class="contact-grid">
-        form id="contact-form" action="https://formspree.io/f/mzdneaba" method="POST" novalidate>
-  <input type="hidden" name="_subject" value="Nouveau message G8WAY">
+        <!-- Formulaire EmailJS pur (pas d'action, pas de method) -->
+        <form id="contact-form" novalidate>
           <div class="row">
             <div>
               <label for="nom">Nom</label>
@@ -366,6 +366,7 @@
           </div>
           <p id="form-msg" role="status">✓ Demande transmise. Un ingénieur vous recontacte sous 24 h ouvrées.</p>
         </form>
+
         <div class="contact-info">
           <p>Un projet, une panne récurrente, ou simplement l'envie d'y voir clair dans votre réseau ? Écrivez-nous, un ingénieur — pas un robot — vous répond.</p>
           <div class="line"><span class="k">e-mail</span><span>contact@g8way.fr</span></div>
@@ -389,9 +390,13 @@
   </div>
 </footer>
 
+<!-- Chargement de la bibliothèque EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Ton script personnalisé -->
 <script>
+  // Initialisation avec ta clé publique
   (function() {
-    // Initialisation avec ta clé publique
     emailjs.init("QJ2tG3z4SLs_SC4O7");
     console.log("EmailJS initialisé !");
   })();
@@ -399,31 +404,27 @@
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Récupération des champs
     const nom = document.getElementById('nom');
     const email = document.getElementById('email');
     const societe = document.getElementById('societe');
     const besoin = document.getElementById('besoin');
     const message = document.getElementById('message');
 
-    // Validation simple
     if (!nom.value.trim() || !email.value.trim() || !email.checkValidity()) {
       alert('Merci de renseigner un nom et un e-mail valides.');
       return;
     }
 
-    // Construction des paramètres pour EmailJS
     const templateParams = {
       nom: nom.value,
       email: email.value,
       societe: societe.value,
       besoin: besoin.value,
-      message: message.value,
-      // 👇 Optionnel : si ton template utilise {{to_email}}, décommente la ligne ci-dessous
-      // to_email: 'ton.email@gmail.com' 
+      message: message.value
+      // Si ton template EmailJS attend un champ {{to_email}}, décommente la ligne :
+      // to_email: 'ton.email@gmail.com'
     };
 
-    // Envoi vers EmailJS avec la méthode .send() (plus fiable)
     emailjs.send(
       'service_th503f7',     // Ton Service ID
       'template_ezk62ss',    // Ton Template ID
